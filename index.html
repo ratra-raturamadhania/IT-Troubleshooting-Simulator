@@ -17,58 +17,59 @@
         <h1>Troubleshooting Simulator</h1>
       </div>
 
-      <div class="score">
-        Score:
-        <span id="score">0</span>
+      <div class="top-info">
+        <div class="progress-box">
+          Case <span id="currentCase">1</span> of <span id="totalCase">5</span>
+        </div>
+
+        <div class="score">
+          Score:
+          <span id="score">0</span>
+        </div>
       </div>
     </div>
 
-    <section class="case-card">
+    <section class="case-card" id="caseCard">
 
       <div class="case-header">
-        <span>CASE #001</span>
+        <span id="caseNumber">CASE #001</span>
         <span class="status">OPEN</span>
       </div>
 
       <div class="problem">
         <p class="small">USER REPORT</p>
-        <h2>Connected, but no internet access.</h2>
-
-        <p>
-          The user is connected to Wi-Fi, but cannot open any website.
-        </p>
+        <h2 id="caseTitle"></h2>
+        <p id="caseDescription"></p>
       </div>
 
-      <div class="device-info">
-        <div>
-          <span>OS</span>
-          <strong>Windows 11</strong>
-        </div>
-
-        <div>
-          <span>Connection</span>
-          <strong>Wi-Fi</strong>
-        </div>
-
-        <div>
-          <span>IP Address</span>
-          <strong>169.254.21.8</strong>
-        </div>
-      </div>
+      <div class="device-info" id="deviceInfo"></div>
 
       <div class="question">
-        <p>What would you check first?</p>
-
-        <div class="buttons">
-          <button onclick="answer('dns')">Check DNS</button>
-          <button onclick="answer('ipconfig')">Run ipconfig</button>
-          <button onclick="answer('restart')">Restart PC</button>
-          <button onclick="answer('browser')">Reinstall Browser</button>
-        </div>
+        <p>What would you do first?</p>
+        <div class="buttons" id="answerButtons"></div>
       </div>
 
       <div id="result" class="result hidden"></div>
 
+      <button id="nextButton" class="next-btn hidden" onclick="nextCase()">
+        Next Case →
+      </button>
+
+    </section>
+
+    <section id="finalScreen" class="final-screen hidden">
+      <p class="small">SIMULATION COMPLETE</p>
+      <h2>Your IT Support Score</h2>
+
+      <div class="final-score" id="finalScore">
+        0/50
+      </div>
+
+      <p id="finalMessage"></p>
+
+      <button onclick="restartSimulator()">
+        Restart Simulation
+      </button>
     </section>
 
   </main>
