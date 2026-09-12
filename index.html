@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Troubleshooting Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <div class="topbar">
+      <div>
+        <p class="label">IT SUPPORT LAB</p>
+        <h1>Troubleshooting Simulator</h1>
+      </div>
+
+      <div class="score">
+        Score:
+        <span id="score">0</span>
+      </div>
+    </div>
+
+    <section class="case-card">
+
+      <div class="case-header">
+        <span>CASE #001</span>
+        <span class="status">OPEN</span>
+      </div>
+
+      <div class="problem">
+        <p class="small">USER REPORT</p>
+        <h2>Connected, but no internet access.</h2>
+
+        <p>
+          The user is connected to Wi-Fi, but cannot open any website.
+        </p>
+      </div>
+
+      <div class="device-info">
+        <div>
+          <span>OS</span>
+          <strong>Windows 11</strong>
+        </div>
+
+        <div>
+          <span>Connection</span>
+          <strong>Wi-Fi</strong>
+        </div>
+
+        <div>
+          <span>IP Address</span>
+          <strong>169.254.21.8</strong>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>What would you check first?</p>
+
+        <div class="buttons">
+          <button onclick="answer('dns')">Check DNS</button>
+          <button onclick="answer('ipconfig')">Run ipconfig</button>
+          <button onclick="answer('restart')">Restart PC</button>
+          <button onclick="answer('browser')">Reinstall Browser</button>
+        </div>
+      </div>
+
+      <div id="result" class="result hidden"></div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
