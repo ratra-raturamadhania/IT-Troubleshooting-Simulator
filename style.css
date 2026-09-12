@@ -12,11 +12,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 30px 0;
 }
 
 .app {
   width: 90%;
-  max-width: 900px;
+  max-width: 950px;
 }
 
 .topbar {
@@ -24,6 +25,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  gap: 20px;
 }
 
 .label {
@@ -37,14 +39,22 @@ h1 {
   font-size: 30px;
 }
 
+.top-info {
+  display: flex;
+  gap: 10px;
+}
+
+.progress-box,
 .score {
   background: #161b22;
   padding: 12px 18px;
   border-radius: 10px;
   border: 1px solid #30363d;
+  font-size: 14px;
 }
 
-.case-card {
+.case-card,
+.final-screen {
   background: #161b22;
   border: 1px solid #30363d;
   border-radius: 15px;
@@ -63,7 +73,8 @@ h1 {
   color: #3fb950;
 }
 
-.problem .small {
+.problem .small,
+.final-screen .small {
   font-size: 11px;
   color: #7d8590;
   letter-spacing: 2px;
@@ -119,11 +130,18 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;
+  font-size: 14px;
 }
 
 button:hover {
   background: #30363d;
   transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .result {
@@ -132,7 +150,7 @@ button:hover {
   border-radius: 10px;
   background: #0d1117;
   border: 1px solid #30363d;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .correct {
@@ -143,14 +161,39 @@ button:hover {
   border-color: #da3633;
 }
 
-.hidden {
-  display: none;
+.next-btn {
+  width: 100%;
+  margin-top: 20px;
+  background: #238636;
+  border-color: #2ea043;
 }
 
-code {
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
+.next-btn:hover {
+  background: #2ea043;
+}
+
+.final-screen {
+  text-align: center;
+}
+
+.final-screen h2 {
+  margin-bottom: 20px;
+}
+
+.final-score {
+  font-size: 56px;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.final-screen p {
+  color: #9da7b3;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 650px) {
@@ -165,6 +208,14 @@ code {
   .topbar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+  }
+
+  .top-info {
+    width: 100%;
+  }
+
+  .progress-box,
+  .score {
+    flex: 1;
   }
 }
